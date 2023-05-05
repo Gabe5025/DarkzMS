@@ -3,14 +3,16 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char:FindFirstChildWhichIsA("Humanoid")
+print("Creating Window")
 local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 -- // Tabs // --
-
+print("Creating Tabs")
 local Scripts = Window:MakeTab({ 	Name = "📃 Scripts", 	Icon = "", 	PremiumOnly = false })
 local DOORS = Window:MakeTab({ 	Name = "🚪 DOORS", 	Icon = "", 	PremiumOnly = false })
 
 -- // Buttons // --
+print("Adding Buttons")
 Scripts:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -86,5 +88,6 @@ end)
 	end    
 })
 
--- // Starting Lib // --
+-- // Initiate Lib // --
+print("Initiating UI")
 OrionLib:Init()
