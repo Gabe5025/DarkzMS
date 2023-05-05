@@ -99,7 +99,12 @@ Scripts:AddButton({
 	end
 })
 
-
+Scripts:AddButton({
+	Name = "Keyboard GUI",
+	Callback = function()	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
+	end
+})
 
 
 -- // Make Checkboxes // --
