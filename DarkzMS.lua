@@ -4,7 +4,9 @@ local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char:FindFirstChildWhichIsA("Humanoid")
 print("Creating Window")
-local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1.1", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+-- //
 
 -- // Tabs // --
 print("Creating Tabs")
@@ -68,7 +70,7 @@ game:GetService("ReplicatedStorage").EntityInfo.Revive:FireServer()
 
 
 DOORS:AddButton({
-	Name = "Crucifix (Made by PenguinManiack",
+	Name = "Crucifix (Made by PenguinManiack)",
 	Callback = function()	
 		_G.Uses = 1
 		_G.Range = 30
@@ -78,15 +80,48 @@ DOORS:AddButton({
 	end    
 })
 
-CameraPartDeleter:AddButton({
-	Name = "Camera Part Remover",
+DOORS:AddButton({
+	Name = "Screech Remover",
 	Callback = function()	
 		workspace.CurrentCamera.ChildAdded:Connect(function(a)
 wait(0.1)
+if a.Name == "Screech" then
 a:Destroy()
+end
 end)
 	end    
 })
+
+Scripts:AddButton({
+	Name = "Fling GUI",
+	Callback = function()	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+	end
+})
+
+
+
+
+-- // Make Checkboxes // --
+print("Making Checkboxes")
+DOORS:AddToggle({
+	Name = "SpeedBoost",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+
+   -- Warning: Changing this may occur errors if you don't know what you're doing.
+			while Value do
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 21
+				task.wait(0.5)
+			end
+		else
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 10
+		end
+	end    
+})
+
+
 
 -- // Initiate Lib // --
 print("Initiating UI")
