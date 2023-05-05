@@ -3,12 +3,12 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char:FindFirstChildWhichIsA("Humanoid")
-local Window = OrionLib:MakeWindow({Name = "DarkzMS", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 -- // Tabs // --
 
 local Scripts = Window:MakeTab({ 	Name = "📃 Scripts", 	Icon = "", 	PremiumOnly = false })
-local DOORS = Window:MakeTab({ 	Name = "🚪DOORS", 	Icon = "", 	PremiumOnly = false })
+local DOORS = Window:MakeTab({ 	Name = "🚪 DOORS", 	Icon = "", 	PremiumOnly = false })
 
 -- // Buttons // --
 Scripts:AddButton({
