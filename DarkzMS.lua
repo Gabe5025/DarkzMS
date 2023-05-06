@@ -4,7 +4,7 @@ local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char:FindFirstChildWhichIsA("Humanoid")
 print("Creating Window")
-local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1.1", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1.2", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 -- //
 
@@ -17,7 +17,8 @@ local DOORS = Window:MakeTab({ 	Name = "🚪 DOORS", 	Icon = "", 	PremiumOnly = 
 print("Adding Buttons")
 Scripts:AddButton({
 	Name = "Infinite Yield",
-	Callback = function()	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+	Callback = function()	
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
   	end    
 })
 
@@ -47,20 +48,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/mstudio45/MSDOORS/7bd
   	end    
 })
 
-Scripts:AddButton({
-	Name = "Reset Character",
-	Callback = function()	
-hum:TakeDamage(100)
-  	end    
-})
-
-DOORS:AddButton({
-	Name = "Reset Character",
-	Callback = function()	
-hum:TakeDamage(100)
-  	end    
-})
-
 DOORS:AddButton({
 	Name = "Revive (Needs at least 1 revive)",
 	Callback = function()	
@@ -81,16 +68,17 @@ DOORS:AddButton({
 })
 
 DOORS:AddButton({
-	Name = "Screech Remover",
-	Callback = function()	
-		workspace.CurrentCamera.ChildAdded:Connect(function(a)
-wait(0.1)
-if a.Name == "Screech" then
-a:Destroy()
-end
-end)
-	end    
+    Name = "Anti-Screech",
+    Callback = function()
+        workspace.CurrentCamera.ChildAdded:Connect(function(child)
+            if child.Name == "Screech" then
+task.wait(0.1)
+                child:Destroy()
+            end
+        end)
+    end
 })
+
 
 Scripts:AddButton({
 	Name = "Fling GUI",
@@ -117,7 +105,7 @@ DOORS:AddToggle({
 
    -- Warning: Changing this may occur errors if you don't know what you're doing.
 			while Value do
-game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 21
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 20
 				task.wait(0.5)
 			end
 		else
