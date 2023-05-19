@@ -28,25 +28,15 @@ DOORS:AddButton({
   	end    
 })
 
-DOORS:AddButton({
-	Name = "God Mode (By Nerd, Needs whitelist)",
-	Callback = function()	loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/GodModeByNerd.lua"))()
-  	end    
-})
+
 
 
 DOORS:AddButton({
 	Name = "MSDOORS",
-	Callback = function()	loadstring(game:HttpGet('https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua'))()
+	Callback = function() loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()	
   	end    
 })
 
-DOORS:AddButton({
-	Name = "MSDOORS (mobile, outdated)",
-	Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/mstudio45/MSDOORS/7bd97c2d956a775d683c2d7973d79715b30998ea/MSDOORS/Moonsec.lua'))()
-  	end    
-})
 
 DOORS:AddButton({
 	Name = "Revive (Needs at least 1 revive)",
@@ -92,26 +82,6 @@ Scripts:AddButton({
 	Callback = function()	
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
 	end
-})
-
-
--- // Make Checkboxes // --
-print("Making Checkboxes")
-DOORS:AddToggle({
-	Name = "SpeedBoost",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-
-   -- Warning: Changing this may occur errors if you don't know what you're doing.
-			while Value do
-game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 20
-				task.wait(0.5)
-			end
-		else
-game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 10
-		end
-	end    
 })
 
 
