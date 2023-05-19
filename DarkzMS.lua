@@ -4,14 +4,14 @@ local plr = game:GetService("Players").LocalPlayer
 local char = plr.Character
 local hum = char:FindFirstChildWhichIsA("Humanoid")
 print("Creating Window")
-local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1.2", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "DarkzMS | V1.3", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 -- //
 
 -- // Tabs // --
 print("Creating Tabs")
-local Scripts = Window:MakeTab({ 	Name = "📃 Scripts", 	Icon = "", 	PremiumOnly = false })
-local DOORS = Window:MakeTab({ 	Name = "🚪 DOORS", 	Icon = "", 	PremiumOnly = false })
+local Scripts = Window:MakeTab({ 	Name = "📃 | Scripts", 	Icon = "", 	PremiumOnly = false })
+local DOORS = Window:MakeTab({ 	Name = "🚪 | DOORS", 	Icon = "", 	PremiumOnly = false })
 
 -- // Buttons // --
 print("Adding Buttons")
@@ -70,12 +70,7 @@ task.wait(0.1)
 })
 
 
-Scripts:AddButton({
-	Name = "Fling GUI",
-	Callback = function()	
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
-	end
-})
+
 
 Scripts:AddButton({
 	Name = "Keyboard GUI",
@@ -84,7 +79,12 @@ Scripts:AddButton({
 	end
 })
 
-
+Scripts:AddButton({
+	Name = "Kick myself",
+	Callback = function()	
+		
+	end
+})
 
 -- // Initiate Lib // --
 print("Initiating UI")
