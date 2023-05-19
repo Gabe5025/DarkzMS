@@ -46,6 +46,8 @@ game:GetService("ReplicatedStorage").EntityInfo.Revive:FireServer()
 })
 
 
+
+
 DOORS:AddButton({
 	Name = "Crucifix (Made by PenguinManiack)",
 	Callback = function()	
@@ -79,12 +81,7 @@ Scripts:AddButton({
 	end
 })
 
-Scripts:AddButton({
-	Name = "Kick myself",
-	Callback = function()	
-		
-	end
-})
+
 
 -- // Initiate Lib // --
 print("Initiating UI")
